@@ -57,4 +57,26 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset();
         });
     }
+
+    // Quote form handler
+    const quoteForm = document.getElementById('quote-form');
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Thank you for requesting a quote! We will get back to you shortly.');
+            quoteForm.reset();
+        });
+    }
+});
+
+// Navigation menu interactivity
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        link.style.color = '#007BFF';
+        link.style.transition = 'color 0.3s ease';
+    });
+    link.addEventListener('mouseout', () => {
+        link.style.color = '';
+    });
 });
