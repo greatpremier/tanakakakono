@@ -33,4 +33,28 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // Fade-in animation on scroll and on load
+    function revealFadeIn() {
+        const fadeEls = document.querySelectorAll('.fade-in');
+        fadeEls.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('visible');
+            }
+        });
+    }
+
+    revealFadeIn();
+    window.addEventListener('scroll', revealFadeIn);
+
+    // Simple contact form handler (demo only)
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Thank you for contacting Sibusiso Plumbing! We will get back to you soon.');
+            form.reset();
+        });
+    }
 });
